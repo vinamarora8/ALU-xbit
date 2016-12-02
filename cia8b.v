@@ -24,7 +24,7 @@ module cia8b(inA, inB, cin, sum, cout
 	// Assigning ports as in/out
 	input [7:0] inA, inB;
 	input cin;
-	output [8:0] sum;
+	output [7:0] sum;
 	output cout;
 	
 	// Logic
@@ -38,6 +38,6 @@ module cia8b(inA, inB, cin, sum, cout
 	//// an incrementer controlled by carry4
 	wire [4:0] w1;
 	rca4b rca2(inA[7:4], inB[7:4], 0, w1);
-	incrementer5b inc1(w1, carry4, sum[8:4]);
+	incrementer5b inc1(w1, carry4, {cout, sum[7:4]});
 	
 endmodule
