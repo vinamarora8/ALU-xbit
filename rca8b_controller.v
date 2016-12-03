@@ -1,10 +1,10 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: IIT-Roorkee	
+// Engineer: Vinam Arora
 // 
 // Create Date:    16:12:56 12/03/2016 
-// Design Name: 
+// Design Name: 	Carry Ripple Adder 8 bit - Controller
 // Module Name:    rca8b_controller 
 // Project Name: 
 // Target Devices: 
@@ -36,7 +36,7 @@ module rca8b_controller(in, cin, store_A, out, cout
 	rca8b rca1(numA, in, cin, out, cout);
 	
 	// Update register when button is pressed
-	always @(posedge store_A)
+	always @(store_A)
 		numA <= in;
 
 endmodule
