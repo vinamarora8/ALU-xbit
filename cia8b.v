@@ -37,7 +37,7 @@ module cia8b(inA, inB, cin, sum, cout
 	//// sum[8:4]  is inA[4:7] and inB[4:7] passed through RCA4b passed through
 	//// an incrementer controlled by carry4
 	wire [4:0] w1;
-	rca4b rca2(inA[7:4], inB[7:4], 0, w1);
+	rca4b rca2(inA[7:4], inB[7:4], 1'b0, w1);
 	incrementer5b inc1(w1, carry4, {cout, sum[7:4]});
 	
 endmodule
