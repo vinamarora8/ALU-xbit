@@ -1,4 +1,4 @@
-
+NET "store_A" CLOCK_DEDICATED_ROUTE=FALSE;
 # PlanAhead Generated physical constraints 
 
 NET "cout" LOC = AP24;
