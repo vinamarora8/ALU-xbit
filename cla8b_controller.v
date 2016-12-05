@@ -36,7 +36,9 @@ module cla8b_controller(in, store_A, cin, out, cout
 	cla8b cla1(numA, in, cin, out, cout);
 	
 	// Update register when button is pressed
-	always @(store_A)
-		numA <= in;
-
+	always @(*)
+	begin
+		if (store_A == 1) numA = in;
+	end
+	
 endmodule

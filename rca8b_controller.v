@@ -36,7 +36,9 @@ module rca8b_controller(in, cin, store_A, out, cout
 	rca8b rca1(numA, in, cin, out, cout);
 	
 	// Update register when button is pressed
-	always @(store_A)
-		numA <= in;
-
+	always @(*)
+	begin
+		if (store_A == 1)	numA = in;
+	end
+	
 endmodule
