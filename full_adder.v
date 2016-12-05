@@ -18,17 +18,20 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module full_adder(inA, inB, cin, sum, cout, p
+module full_adder(inA, inB, cin, sum, cout, p, g
     );
 	
 	// Assigning ports as in/out
 	input inA, inB, cin;
-	output sum, cout, p;
+	output sum, cout, p, g;
 
-	// Logic for p (used in carry skip adder
+	// Logic for p (propagate carry)
 	// p = a^b
-	xor g0(p, inA, inB);
+	xor propagator(p, inA, inB);
 	
+	// Logic for g (generate carry)
+	// g = ab
+	and generator(g, inA, inB);
 	// Logic for sum
 	// sum = a^b^c = p^c
 	xor g1(sum, p, cin);

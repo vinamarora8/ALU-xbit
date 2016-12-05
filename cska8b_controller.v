@@ -20,7 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 module cska8b_controller(in, cin, store_A, out, cout
     );
-
+	
+	// Use rca8b_controller.ucf with this
+	
 	// Assigning ports as in/out
 	input [7:0] in;
 	input cin, store_A;
