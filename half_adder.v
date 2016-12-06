@@ -23,11 +23,11 @@ module half_adder(
     );
 	 
 	 // Assigning ports as in/out
-	 input inA, intB;
+	 input inA, inB;
 	 output sum, cout;
 	 
 	// Logic
-	and g1(cout, a, b);
-	xor g2(sum, a, b);
+	and g1(cout, inA, inB);
+	xor g2(sum, inA, inB);
 
 endmodule
